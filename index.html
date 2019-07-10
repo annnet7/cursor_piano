@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Piano</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="pianoKey" data-item="audio1">A</div>
+        <div class="pianoKey" data-item="audio2">B</div>
+        <div class="pianoKey" data-item="audio3">C</div>
+        <div class="pianoKey" data-item="audio4">D</div>
+        <div class="pianoKey" data-item="audio5">E</div>
+        <div class="pianoKey" data-item="audio6">F</div>
+        <div class="pianoKey" data-item="audio7">G</div>
+        <div class="pianoKey" data-item="audio8">A</div>
+    </div>
+    <audio id="audio1" src="piano-master/1.mp3" autoplay="false"></audio>
+    <audio id="audio2" src="piano-master/2.mp3" autoplay="false"></audio>
+    <audio id="audio3" src="piano-master/3.mp3" autoplay="false"></audio>
+    <audio id="audio4" src="piano-master/4.mp3" autoplay="false"></audio>
+    <audio id="audio5" src="piano-master/5.mp3" autoplay="false"></audio>
+    <audio id="audio6" src="piano-master/6.mp3" autoplay="false"></audio>
+    <audio id="audio7" src="piano-master/7.mp3" autoplay="false"></audio>
+    <audio id="audio8" src="piano-master/8.mp3" autoplay="false"></audio>
+    <script>
+        //получила клаыиши
+        const pianokeys = document.getElementsByClassName("pianoKey");
+        //повесила событие
+        [...pianokeys].forEach(element => {
+            let treck = element.getAttribute('data-item');
+            element.addEventListener('click', function() {
+                let sound = document.getElementById(treck);
+                sound.play();
+            });
+        })
+    </script>
+</body>
+
+</html>
